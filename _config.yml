@@ -13,7 +13,7 @@
 title: Signal to Software
 
 # Your name to show in the footer
-author: Alice Becker londero
+author: Alice Becker Londero
 
 ###############################################
 # --- List of links in the navigation bar --- #
@@ -31,7 +31,7 @@ navbar-links:
 
 # Image to show in the navigation bar - works best with a square image
 # Remove this parameter if you don't want an image in the navbar
-avatar: "/assets/img/icon.png"
+avatar: "/assets/img/newicon.png"
 
 # By default, the image is cut into a circle. You can disable this behaviour by setting 'round-avatar: false'
 round-avatar: true
@@ -135,7 +135,7 @@ navbar-var-length: false
 # Personalize the colours in your website. Colour values can be any valid CSS colour
 
 page-col: "#FFFFFF"
-text-col: "#003c71"         # A very dark gray for readable body text
+text-col: "#003c71"         
 link-col: "#003c71"         # Your main dark blue for links
 hover-col: "#0056b3"        # A slightly brighter blue for when you mouse over links
 navbar-col: "#FFFFFF"       # White navigation bar background
