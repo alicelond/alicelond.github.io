@@ -1,0 +1,29 @@
+/* assets/css/custom.css */
+
+/* 1. Import a simple, narrow font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap');
+
+/* 2. Override the default theme fonts */
+:root {
+  --body-font: 'Roboto Condensed', sans-serif;
+  --header-font: 'Roboto Condensed', sans-serif;
+}
+
+/* 3. Adjust font sizes and weights to be smaller and less bold */
+body {
+  font-size: 1rem; /* Default is 1.125rem */
+  font-weight: 400; /* This is normal weight */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700; /* This is bold, but less heavy than the default 800 */
+}
+
+/* Optional: you can fine-tune heading sizes if you like */
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.75rem;
+}
