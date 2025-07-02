@@ -135,7 +135,7 @@ navbar-var-length: false
 # Personalize the colours in your website. Colour values can be any valid CSS colour
 
 page-col: "#FFFFFF"
-text-col: "#333333"         # A very dark gray for readable body text
+text-col: "#003c71"         # A very dark gray for readable body text
 link-col: "#003c71"         # Your main dark blue for links
 hover-col: "#0056b3"        # A slightly brighter blue for when you mouse over links
 navbar-col: "#FFFFFF"       # White navigation bar background
