@@ -135,7 +135,7 @@ navbar-var-length: false
 
 page-col: "#FFFFFF"
 text-col: "#131431"         
-link-col: "#131431"         # Your main dark blue for links
+link-col: "#311314"         # Complementary red
 hover-col: "#2e3175"        # A slightly brighter blue for when you mouse over links
 navbar-col: "#FFFFFF"       # White navigation bar background
 navbar-text-col: "#131431"  # Dark blue text on the navigation bar
