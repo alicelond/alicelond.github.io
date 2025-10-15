@@ -1,0 +1,21 @@
+---
+layout: post
+title: Airpods Pro2 include assistive hearing tools
+thumbnail-img: /assets/img/2025-09-09-assistive-hearing.png
+cover-img: /assets/img/2025-09-09-assistive-hearing.png
+share-img: /assets/img2025-09-09-assistive-hearing.png
+tags: [hearing-aids, assistive-hearing, dsp]
+author: Alice Becker Londero
+---
+
+The most popular hearing device in the world may now be the one hiding in plain sight: the Apple AirPods Pro 2. With a recent software update, Apple transformed these earbuds into approved medical devices, effectively serving as over-the-counter hearing aids for individuals with mild to moderate hearing loss.
+
+As an acoustical and software engineer, I find the execution of this remarkable. Apple now integrates a validated hearing test directly into iOS. The software guides you through a on-device hearing test, generating a personal audiogram right on your phone.
+
+This audiogram then instructs the AirPods Pro 2's processor to apply a precise, real-time gain curve to the sound captured by the external microphones. Features like "Conversation Boost" then employ classic signal processing techniques to clarify speech actively.
+
+As pointed out by Dr. Nicky Chong-White in [her article](https://hearingpractitionernews.com.au/airpods-pro-2-more-than-earbuds/), only about one in five people who need hearing aids use them, often due to cost and social stigma. She is working on assessing the acoustic performance of this solution. By building this capability into a device millions already own for music and calls, Apple is helping people experience better hearing.
+
+However, these devices have their engineering limits. The 5-7 hour battery life doesn't support all-day wear, and their performance doesn't replace the advanced features or personalised support from a professionally-fitted hearing aid.
+
+Check the links below for more information, including [Apple's step-by-step guide](https://support.apple.com/en-us/120992) to using the hearing assistance aid
