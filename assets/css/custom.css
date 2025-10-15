@@ -11,7 +11,7 @@
 
 /* 3. Adjust font sizes and weights to be smaller and less bold */
 body {
-  font-size: 1rem; /* Default is 1.125rem */
+  font-size: 1.125rem; /* Default is 1.125rem */
   font-weight: 400; /* This is normal weight */
 }
 
