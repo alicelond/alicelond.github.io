@@ -3,23 +3,7 @@ layout: page
 title: About me
 subtitle: From sound waves to software
 ---
-
-<div style="display: flex; align-items: flex-start; gap: 20px; margin: 20px 0;">
-  <div style="flex: 2;">
-    <p>Hi, I'm Alice Becker Londero, an engineer with a passion for building software that bridges the physical and digital worlds. Currently, I'm a Master's candidate in Computer Science at the University of São Paulo (USP), where I focus on digital processing techniques to process vibration data on real-time systems.</p>
-  </div>
-  <div style="flex: 1;">
-    <img src="/assets/img/pixel_small.png" alt="Alice Becker Londero" style="width: 100%; height: auto; border-radius: 8px;">
-  </div>
-</div>
-
-<style>
-@media (max-width: 768px) {
-  .about-layout {
-    flex-direction: column !important;
-  }
-}
-</style>
+Hi, I'm Alice Becker Londero, an engineer with a passion for building software that bridges the physical and digital worlds. Currently, I'm a Master's candidate in Computer Science at the University of São Paulo (USP), where I focus on digital processing techniques to process vibration data on real-time systems.
 
 My background is in Acoustical Engineering, a field where I learned to translate complex physical phenomena—like sound and vibration—into structured data. I discovered my true passion: not just collecting the data, but building the software that brings it to life. I realized that the most elegant solutions to complex engineering challenges lay in code. This realization drove me to pivot my career and pursue a deep, formal education in computer science.
 
