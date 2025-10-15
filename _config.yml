@@ -30,7 +30,7 @@ navbar-links:
 
 # Image to show in the navigation bar - works best with a square image
 # Remove this parameter if you don't want an image in the navbar
-avatar: "/assets/img/icon2.png"
+avatar: "/assets/img/pixel_small.png"
 
 # By default, the image is cut into a circle. You can disable this behaviour by setting 'round-avatar: false'
 round-avatar: true
@@ -133,17 +133,17 @@ keywords: "software, engineering, acoustics, computer science, programming, codi
 
 # Personalize the colours in your website. Colour values can be any valid CSS colour
 
-page-col: "#FFFFFF"
-text-col: "#131431"         
-link-col: "#74351E"         # Complementary red
-hover-col: "#1E3274"        # A slightly brighter blue for when you mouse over links
-navbar-col: "#FFFFFF"       # White navigation bar background
-navbar-text-col: "#131431"  # Dark blue text on the navigation bar
-navbar-border-col: "#E0E0E0" # A very light gray border under the navbar
-footer-col: "#131431"         # Dark blue footer background
-footer-text-col: "#FFFFFF"  # Light gray text on the dark blue footer
-footer-link-col: "#FFFFFF"  # White links on the dark blue footer
-footer-hover-col: "#BBBBBB" # A lighter gray for hover on footer links
+page-col: "#FFFFFF"         #/* Kept as requested */
+text-col: "#2E2938"         #/* Replaced dark blue with a softer, stylish deep purple */
+link-col: "#489C9A"         #/* Using the vibrant teal for all links */
+hover-col: "#E0A83F"        #/* Using the warm ochre for an eye-catching hover effect */
+navbar-col: "#FFFFFF"       #/* Kept as requested */
+navbar-text-col: "#2E2938"  #/* Unified with main text color */
+navbar-border-col: "#E0E0E0" #/* Let's update this too! Try #D9D5E4 for a softer look */
+footer-col: "#2E2938"         #/* Switched to deep purple for a cohesive theme */
+footer-text-col: "#F0E5D9"  #/* Using soft cream instead of stark white for a retro feel */
+footer-link-col: "#F0E5D9"  #/* Unified with footer text color */
+footer-hover-col: "#489C9A" #/* Brings the main link color into the footer for consistency */
 
 # Alternatively, the navbar, footer, and page background can be set to an image
 # instead of colour
