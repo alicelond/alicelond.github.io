@@ -1,7 +1,7 @@
 ---
 layout: page
-title: About Me
-subtitle: From Sound Waves to Software
+title: About me
+subtitle: From sound waves to software
 ---
 
 <div style="display: flex; align-items: flex-start; gap: 20px; margin: 20px 0;">
