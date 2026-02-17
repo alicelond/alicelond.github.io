@@ -1,0 +1,66 @@
+---
+---
+
+// scss-lint:disable all
+@import "{{ site.theme }}";
+// scss-lint:enable all
+
+/* Custom color overrides for Hacker theme */
+/* Using your preferred color palette from Beautiful Jekyll */
+
+/* Override background and text colors */
+body {
+  background-color: #2E2938 !important; /* Deep purple background */
+  color: #F0E5D9 !important; /* Soft cream text */
+}
+
+/* Header styling */
+header {
+  background: rgba(46, 41, 56, 0.95) !important;
+  border-bottom: 2px solid #489C9A !important; /* Teal accent */
+}
+
+header h1 {
+  color: #F0E5D9 !important;
+}
+
+header h2 {
+  color: #E0A83F !important; /* Warm ochre for subtitle */
+}
+
+/* Link colors */
+a {
+  color: #489C9A !important; /* Vibrant teal for links */
+  text-decoration: none;
+}
+
+a:hover {
+  color: #E0A83F !important; /* Warm ochre hover */
+  text-decoration: underline;
+}
+
+/* Code blocks */
+pre, code {
+  background-color: rgba(0, 0, 0, 0.3) !important;
+  border: 1px solid #489C9A !important;
+}
+
+/* Buttons and downloads */
+.btn {
+  background-color: #489C9A !important;
+  color: #F0E5D9 !important;
+  border: 1px solid #489C9A !important;
+}
+
+.btn:hover {
+  background-color: #E0A83F !important;
+  border-color: #E0A83F !important;
+}
+
+/* Optional: Lighter background variant - uncomment if you prefer */
+/*
+body {
+  background-color: #FFFFFF !important;
+  color: #2E2938 !important;
+}
+*/
