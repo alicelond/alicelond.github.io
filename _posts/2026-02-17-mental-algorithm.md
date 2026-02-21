@@ -6,6 +6,7 @@ cover-img: /assets/img/2026-02-17-mental-algorithm.jpg
 share-img: /assets/img/2026-02-17-mental-algorithm.jpg
 tags: [big-o-notation, analysis-of-algorithm, time-complexity]
 author: Alice Becker Londero
+mathjax: true
 ---
 Even though [the use of AI coding tools increases in industry](https://www.technologyreview.com/2025/12/15/1128352/rise-of-ai-coding-developers-2026/), the knowledge of fundamentals of computing skills is still relevant for code reviewing, algorithm analysis and debugging, specially worst case analysis or simply Big-O notation. 
 
@@ -37,12 +38,13 @@ When you find explicit `for`, `while` loops, consider:
 - *When will the loop stop?* Think about the conditions the algorithm needs to comply to stop and identify which variables are involved in this scenario.
 
 - *How is this variable in the stop condition changing?*
-| Type of change | Time Complexity|
-|-|-|
+
+| Type of change | Time Complexity |
+|---|---|
 | Adding or subtracting by a constant (e.g., `i++`, `i--`, `i += 2`) | $O(N)$ |
 | Multiplying or dividing by a constant (e.g., `i *= 2`, `i /= 2`) | $O(\log N)$ |
 | Incrementing by the loop variable itself (e.g., `i += i`) | $O(\log N)$ |
-| Nested loops with both incrementing linearly | $O(N^2)$ | 
+| Nested loops with both incrementing linearly | $O(N^2)$ |
 
 # 4. How do we handle the conditionals?
 When you find explicit `if/else` conditionals, we consider need to evaluate both codes inside each component. We should choose the one that is the most time consuming, considering only the higher terms. 
