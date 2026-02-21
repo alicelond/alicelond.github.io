@@ -84,7 +84,7 @@ social-network-links:
 
 # If you want your website to generate an RSS feed, provide a description
 # The URL for the feed will be https://<your_website>/feed.xml
-rss-description: An acoustical engineer's journey into computer science, and software.
+rss-description: Signal processing, software and everything in between.
 ###########################
 # --- General options --- #
 ###########################
