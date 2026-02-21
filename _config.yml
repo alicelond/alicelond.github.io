@@ -158,7 +158,8 @@ footer-hover-col: "#489C9A" #/* Brings the main link color into the footer for c
 # For any extra visual customization, you can include additional CSS files in every page on your site. List any custom CSS files here
 #site-css:
 #  - "/assets/css/custom-styles.css"
-site-css: "/assets/css/custom.css"
+site-css:
+  - "/assets/css/custom.css"
 
 # If you have common JavaScript files that should be included in every page, list them here
 #site-js:

@@ -30,12 +30,12 @@ h2 {
 
 /* 4. Reduce side margins by making containers wider */
 .container-md {
-  max-width: 80%; /* Use 80% of screen width instead of fixed Bootstrap widths */
+  max-width: 90% !important;
 }
 
 /* On very large screens, cap at a reasonable width */
 @media (min-width: 1400px) {
   .container-md {
-    max-width: 1320px;
+    max-width: 1320px !important;
   }
 }
