@@ -120,8 +120,8 @@ function markdownToHtml(markdown) {
         })
         .join('\n');
 
-    // Unordered lists
-    html = html.replace(/^\* (.*?)$/gm, '<li>$1</li>');
+    // Unordered lists (handle both * and -)
+    html = html.replace(/^[\*\-] (.*?)$/gm, '<li>$1</li>');
     html = html.replace(/(<li>.*?<\/li>)/s, '<ul>$1</ul>');
 
     return html;
