@@ -800,6 +800,24 @@ button {
     color: #E0A83F;
 }
 
+/* Math expressions (MathJax) */
+.math-inline {
+    display: inline;
+}
+
+.math-display {
+    display: block;
+    margin: var(--space-lg) 0;
+    text-align: center;
+    overflow-x: auto;
+    padding: var(--space-md) 0;
+}
+
+.post-content .math-display,
+.post-body .math-display {
+    margin: var(--space-lg) 0;
+}
+
 .post-content blockquote {
     border-left: 4px solid var(--color-link);
     padding-left: var(--space-lg);

@@ -204,29 +204,58 @@ function switchView(viewName) {
 /**
  * Load posts from /posts directory
  * Fetches the posts.json index file that lists all post files
+ * Falls back to hardcoded list for local file:// development
  */
 async function loadPosts() {
     let postFiles = [];
     
     // Fetch the posts index
     try {
-        const response = await fetch('/posts/posts.json');
+        const response = await fetch('./posts/posts.json');
         if (response.ok) {
             postFiles = await response.json();
         } else {
-            throw new Error('Failed to load posts index');
+            // Fallback to hardcoded list for local development with file://
+            postFiles = [
+                '2025-07-11-common-mistakes.md',
+                '2025-07-17-evidence-based.md',
+                '2025-08-05-common-security-vulnerabilities.md',
+                '2025-08-15-hand-utensils.md',
+                '2025-08-26-dinosaurs.md',
+                '2025-09-02-formal-dsp.md',
+                '2025-09-09-airpods2.md',
+                '2025-09-16-earthquake.md',
+                '2025-09-23-ai-vulnerability.md',
+                '2025-09-30-swot-code.md',
+                '2025-10-07-how-prompt-injection.md',
+                '2026-02-17-mental-algorithm.md',
+                '2026-05-27-improving-modularity.md'
+            ];
         }
     } catch (err) {
-        console.error('Error loading posts index:', err);
-        elements.postsContainer.innerHTML =
-            '<div class="no-posts"><div class="no-posts-title">Unable to load posts</div></div>';
-        return;
+        // Fallback to hardcoded list if fetch fails (e.g., file:// protocol)
+        console.warn('Could not fetch posts.json, using fallback:', err);
+        postFiles = [
+            '2025-07-11-common-mistakes.md',
+            '2025-07-17-evidence-based.md',
+            '2025-08-05-common-security-vulnerabilities.md',
+            '2025-08-15-hand-utensils.md',
+            '2025-08-26-dinosaurs.md',
+            '2025-09-02-formal-dsp.md',
+            '2025-09-09-airpods2.md',
+            '2025-09-16-earthquake.md',
+            '2025-09-23-ai-vulnerability.md',
+            '2025-09-30-swot-code.md',
+            '2025-10-07-how-prompt-injection.md',
+            '2026-02-17-mental-algorithm.md',
+            '2026-05-27-improving-modularity.md'
+        ];
     }
 
     try {
         for (const file of postFiles) {
             try {
-                const response = await fetch(`/posts/${file}`);
+                const response = await fetch(`./posts/${file}`);
                 if (response.ok) {
                     const markdown = await response.text();
                     const { frontmatter, content } = parseFrontmatter(markdown);
@@ -485,6 +514,11 @@ function renderPost(slug) {
     `;
 
     app.currentPostSlug = slug;
+
+    // Trigger MathJax to render math expressions
+    if (typeof MathJax !== 'undefined' && MathJax.typesetPromise) {
+        MathJax.typesetPromise().catch(err => console.log('MathJax rendering error:', err));
+    }
 }
 
 // ============================================
