@@ -1,13 +1,18 @@
-# project
-_site
-.sass-cache
-.vagrant
-
-# general
+# OS files
 .DS_Store
 Thumbs.db
 ehthumbs.db
 
-Gemfile.lock
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
 
-beautiful-jekyll-theme-*.gem
+# Dependencies
+node_modules/
+
+# Build/Distribution
+dist/
+build/
