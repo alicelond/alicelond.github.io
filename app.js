@@ -203,24 +203,25 @@ function switchView(viewName) {
 
 /**
  * Load posts from /posts directory
- * Since we can't dynamically list files in a browser, we'll provide a list of post files
+ * Fetches the posts.json index file that lists all post files
  */
 async function loadPosts() {
-    const postFiles = [
-        '2025-07-11-common-mistakes.md',
-        '2025-07-17-evidence-based.md',
-        '2025-08-05-common-security-vulnerabilities.md',
-        '2025-08-15-hand-utensils.md',
-        '2025-08-26-dinosaurs.md',
-        '2025-09-02-formal-dsp.md',
-        '2025-09-09-airpods2.md',
-        '2025-09-16-earthquake.md',
-        '2025-09-23-ai-vulnerability.md',
-        '2025-09-30-swot-code.md',
-        '2025-10-07-how-prompt-injection.md',
-        '2026-02-17-mental-algorithm.md',
-        '2026-05-27-improving-modularity.md'
-    ];
+    let postFiles = [];
+    
+    // Fetch the posts index
+    try {
+        const response = await fetch('/posts/posts.json');
+        if (response.ok) {
+            postFiles = await response.json();
+        } else {
+            throw new Error('Failed to load posts index');
+        }
+    } catch (err) {
+        console.error('Error loading posts index:', err);
+        elements.postsContainer.innerHTML =
+            '<div class="no-posts"><div class="no-posts-title">Unable to load posts</div></div>';
+        return;
+    }
 
     try {
         for (const file of postFiles) {
