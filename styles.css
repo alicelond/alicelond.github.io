@@ -666,6 +666,48 @@ button {
     margin-bottom: var(--space-md);
 }
 
+.post-content h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-top: var(--space-lg);
+    margin-bottom: var(--space-md);
+}
+
+.post-body h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-top: var(--space-lg);
+    margin-bottom: var(--space-md);
+}
+
+.post-content h5 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: var(--space-lg);
+    margin-bottom: var(--space-md);
+}
+
+.post-body h5 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: var(--space-lg);
+    margin-bottom: var(--space-md);
+}
+
+.post-content h6 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-top: var(--space-lg);
+    margin-bottom: var(--space-md);
+}
+
+.post-body h6 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-top: var(--space-lg);
+    margin-bottom: var(--space-md);
+}
+
 .post-content p {
     margin-bottom: var(--space-lg);
 }

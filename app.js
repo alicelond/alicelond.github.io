@@ -86,7 +86,10 @@ function markdownToHtml(markdown) {
         return `<pre><code class="language-${language || 'plain'}">${escapedCode}</code></pre>`;
     });
 
-    // Headers
+    // Headers (process from highest number to lowest to avoid conflicts)
+    html = html.replace(/^###### (.*?)$/gm, '<h6>$1</h6>');
+    html = html.replace(/^##### (.*?)$/gm, '<h5>$1</h5>');
+    html = html.replace(/^#### (.*?)$/gm, '<h4>$1</h4>');
     html = html.replace(/^### (.*?)$/gm, '<h3>$1</h3>');
     html = html.replace(/^## (.*?)$/gm, '<h2>$1</h2>');
     html = html.replace(/^# (.*?)$/gm, '<h1>$1</h1>');
@@ -110,7 +113,7 @@ function markdownToHtml(markdown) {
     html = html
         .split('\n\n')
         .map(para => {
-            if (para.startsWith('<h') || para.startsWith('<ul') || para.startsWith('<ol') || para.startsWith('<pre') || para.startsWith('<hr')) {
+            if (para.startsWith('<h') || para.startsWith('<ul') || para.startsWith('<ol') || para.startsWith('<pre') || para.startsWith('<hr') || para.startsWith('<blockquote')) {
                 return para;
             }
             return `<p>${para}</p>`;
