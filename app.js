@@ -346,10 +346,48 @@ async function loadAndRenderProjects() {
         if (response.ok) {
             const markdown = await response.text();
             const { content } = parseFrontmatter(markdown);
-            const html = markdownToHtml(content);
+            
+            // Split projects by the --- separator
+            const projectBlocks = content.split('---').map(block => block.trim()).filter(block => block);
+            
+            // Parse each project block
+            const projects = projectBlocks.map(block => {
+                // First line should be the title (### Project: ...)
+                const lines = block.split('\n');
+                let title = '';
+                let description = '';
+                
+                // Extract title from heading
+                const titleLine = lines.find(line => line.startsWith('###'));
+                if (titleLine) {
+                    title = titleLine.replace(/^###\s+/, '').trim();
+                }
+                
+                // Get remaining content as description
+                const contentStartIndex = lines.findIndex(line => line.startsWith('###')) + 1;
+                if (contentStartIndex > 0) {
+                    description = lines.slice(contentStartIndex).join('\n').trim();
+                }
+                
+                return { title, description };
+            });
+            
+            // Render projects as cards
             const projectsContent = document.getElementById('projects-content');
             if (projectsContent) {
-                projectsContent.innerHTML = html;
+                projectsContent.innerHTML = projects.map(project => {
+                    const descriptionHtml = markdownToHtml(project.description);
+                    return `
+                        <div class="project">
+                            <div class="project-header">
+                                <h3 class="project-title">${project.title}</h3>
+                            </div>
+                            <div class="project-description">
+                                ${descriptionHtml}
+                            </div>
+                        </div>
+                    `;
+                }).join('');
             }
         } else {
             throw new Error('Failed to load projects.md');

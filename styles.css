@@ -1074,6 +1074,46 @@ button {
     font-size: 0.9rem;
 }
 
+.project-header {
+    margin-bottom: var(--space-md);
+}
+
+.project-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin: 0;
+    transition: color 0.2s ease;
+}
+
+.project:hover .project-title {
+    color: var(--color-link);
+}
+
+.project-description {
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+}
+
+.project-description p {
+    margin-bottom: var(--space-md);
+}
+
+.project-description ul {
+    margin-left: var(--space-md);
+    margin-bottom: var(--space-md);
+}
+
+.project-description li {
+    margin-bottom: var(--space-sm);
+    color: var(--color-text-muted);
+}
+
+.project-description strong {
+    color: var(--color-text);
+}
+
 /* ============================================
    Footer
    ============================================ */
