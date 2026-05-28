@@ -337,6 +337,32 @@ async function loadAndRenderAbout() {
     }
 }
 
+/**
+ * Load projects page content from projects.md
+ */
+async function loadAndRenderProjects() {
+    try {
+        const response = await fetch('./projects.md');
+        if (response.ok) {
+            const markdown = await response.text();
+            const { content } = parseFrontmatter(markdown);
+            const html = markdownToHtml(content);
+            const projectsContent = document.getElementById('projects-content');
+            if (projectsContent) {
+                projectsContent.innerHTML = html;
+            }
+        } else {
+            throw new Error('Failed to load projects.md');
+        }
+    } catch (err) {
+        console.error('Error loading projects page:', err);
+        const projectsContent = document.getElementById('projects-content');
+        if (projectsContent) {
+            projectsContent.innerHTML = '<p>Error loading projects content.</p>';
+        }
+    }
+}
+
 // ============================================
 // Filtering & Pagination
 // ============================================
@@ -646,6 +672,7 @@ function handleRoute() {
         loadAndRenderAbout();
     } else if (view === 'projects') {
         switchView('projects');
+        loadAndRenderProjects();
     } else if (view === 'blog') {
         switchView('home');
         renderBlog();
