@@ -106,6 +106,9 @@ function markdownToHtml(markdown) {
     // Code
     html = html.replace(/`([^`]+)`/g, '<code>$1</code>');
 
+    // Images (must be before links to avoid conflict)
+    html = html.replace(/!\[(.*?)\]\((.*?)\)/g, '<img src="$2" alt="$1" style="max-width: 100%; height: auto;">');
+
     // Links
     html = html.replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2">$1</a>');
 
@@ -305,6 +308,32 @@ async function loadPosts() {
         console.error('Error loading posts:', err);
         elements.postsContainer.innerHTML =
             '<div class="no-posts"><div class="no-posts-title">No posts found</div></div>';
+    }
+}
+
+/**
+ * Load about page content from aboutme.md
+ */
+async function loadAndRenderAbout() {
+    try {
+        const response = await fetch('./aboutme.md');
+        if (response.ok) {
+            const markdown = await response.text();
+            const { content } = parseFrontmatter(markdown);
+            const html = markdownToHtml(content);
+            const aboutContent = document.getElementById('about-content');
+            if (aboutContent) {
+                aboutContent.innerHTML = html;
+            }
+        } else {
+            throw new Error('Failed to load aboutme.md');
+        }
+    } catch (err) {
+        console.error('Error loading about page:', err);
+        const aboutContent = document.getElementById('about-content');
+        if (aboutContent) {
+            aboutContent.innerHTML = '<p>Error loading about page content.</p>';
+        }
     }
 }
 
@@ -614,6 +643,7 @@ function handleRoute() {
         renderPost(param);
     } else if (view === 'about') {
         switchView('about');
+        loadAndRenderAbout();
     } else if (view === 'projects') {
         switchView('projects');
     } else if (view === 'blog') {
