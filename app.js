@@ -452,6 +452,7 @@ function renderPost(slug) {
         .join('');
 
     elements.postContent.innerHTML = `
+        <h1 class="post-title">${post.title}</h1>
         <div class="post-meta">
             <div class="post-meta-item">
                 <span class="post-meta-label">Published:</span>
@@ -471,7 +472,7 @@ function renderPost(slug) {
             </div>
             ` : ''}
         </div>
-        <div class="post-content">
+        <div class="post-body">
             ${htmlContent}
         </div>
     `;
