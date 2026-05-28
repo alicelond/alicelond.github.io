@@ -12,7 +12,7 @@ That's where the proposal of [Evidence-Based Software Engineering (EBSE)](https:
 
 This framework's goal is to combine evidence, practical experiences with human values to support decision making. It can be used as a personal toolkit for being a more effective engineer. They came up with 5-step to illustrate their topic, as you can see below.
 
-![EBSE Framework](/assets/img/2025-07-17-ebse-cycle.png) 
+![EBSE Framework](/img/2025-07-17-ebse-cycle.png) 
 
 By framing it as a personal skill, we can use it as a way of increasing our team impact and performance. You'll be able to know more of what's done in our field, besides having proper justification for your points and decisions. 
 
