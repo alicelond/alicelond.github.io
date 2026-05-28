@@ -345,14 +345,20 @@ async function loadAndRenderProjects() {
         const response = await fetch('./projects.md');
         if (response.ok) {
             const markdown = await response.text();
-            const { content } = parseFrontmatter(markdown);
+            const { frontmatter, content } = parseFrontmatter(markdown);
+            
+            // Set subtitle if available
+            const subtitleElement = document.getElementById('projects-subtitle');
+            if (subtitleElement && frontmatter.subtitle) {
+                subtitleElement.textContent = frontmatter.subtitle;
+            }
             
             // Split projects by the --- separator
             const projectBlocks = content.split('---').map(block => block.trim()).filter(block => block);
             
             // Parse each project block
             const projects = projectBlocks.map(block => {
-                // First line should be the title (### Project: ...)
+                // First line should be the title (### project: ...)
                 const lines = block.split('\n');
                 let title = '';
                 let description = '';
