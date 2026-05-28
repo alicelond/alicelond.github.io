@@ -1,6 +1,6 @@
 ---
 title: about me
-subtitle: From sound waves to software engineering
+subtitle: from sound waves to software engineering.
 ---
 
 ![Alice pixel art avatar](./img/pixel_small.png)
