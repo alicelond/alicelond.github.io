@@ -76,6 +76,16 @@ function parseFrontmatter(markdown) {
 function markdownToHtml(markdown) {
     let html = markdown;
 
+    // Code blocks (triple backticks) - must be before inline code
+    html = html.replace(/```(\w+)?\n([\s\S]*?)```/g, (match, language, code) => {
+        const escapedCode = code
+            .trim()
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;');
+        return `<pre><code class="language-${language || 'plain'}">${escapedCode}</code></pre>`;
+    });
+
     // Headers
     html = html.replace(/^### (.*?)$/gm, '<h3>$1</h3>');
     html = html.replace(/^## (.*?)$/gm, '<h2>$1</h2>');
