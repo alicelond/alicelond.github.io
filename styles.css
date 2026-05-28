@@ -1002,6 +1002,14 @@ button {
     font-size: 1.05rem;
 }
 
+.about-content img {
+    max-width: 250px;
+    height: auto;
+    float: left;
+    margin: 0 var(--space-lg) var(--space-lg) 0;
+    border-radius: 6px;
+}
+
 .about-content p {
     margin-bottom: var(--space-lg);
 }
