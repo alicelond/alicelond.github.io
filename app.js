@@ -225,7 +225,7 @@ async function loadPosts() {
     try {
         for (const file of postFiles) {
             try {
-                const response = await fetch(`./posts/${file}`);
+                const response = await fetch(`/posts/${file}`);
                 if (response.ok) {
                     const markdown = await response.text();
                     const { frontmatter, content } = parseFrontmatter(markdown);
