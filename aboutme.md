@@ -1,12 +1,11 @@
 ---
-layout: page
-title: About me
+title: about me
 subtitle: From sound waves to software engineering
 ---
 
 ![Alice pixel art avatar](./img/pixel_small.png)
 
-Hello there, I'm Alice Becker Londero, an acoustical and software engineer with a passion for building software that bring solutions connecting the physical and digital worlds. Currently, I'm a Master's candidate in Computer Science at the University of São Paulo (USP), where I focus on digital processing techniques to process vibration data on real-time systems.
+Hello there, I'm Alice Becker Londero, an acoustical and software engineer with a passion for building software that bring solutions connecting the physical and digital worlds. Currently, I'm a Master's candidate in [Computer Science at the University of São Paulo (USP)](https://www.ime.usp.br/pos-computacao/alunos/), where I focus on digital processing techniques to process vibration data on real-time systems.
 
 As someone that is led by curiosity, my profissional carrer has been driven by experimentation where I worked in different fields in Acoustical Engineering, which include room acoustics, building acoustics, environmental acoustics and digital signal processing. A common factor in all these experiences was that I always looked for challenges and used code to ease processes which has lead me to software engineering. 
 

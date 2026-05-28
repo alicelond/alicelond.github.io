@@ -1,5 +1,4 @@
 ---
-layout: page
 title: Projects
 subtitle: A selection of my work in software and acoustical engineering.
 ---

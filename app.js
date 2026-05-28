@@ -319,7 +319,14 @@ async function loadAndRenderAbout() {
         const response = await fetch('./aboutme.md');
         if (response.ok) {
             const markdown = await response.text();
-            const { content } = parseFrontmatter(markdown);
+            const { frontmatter, content } = parseFrontmatter(markdown);
+            
+            // Set subtitle if available
+            const subtitleElement = document.getElementById('about-subtitle');
+            if (subtitleElement && frontmatter.subtitle) {
+                subtitleElement.textContent = frontmatter.subtitle;
+            }
+            
             const html = markdownToHtml(content);
             const aboutContent = document.getElementById('about-content');
             if (aboutContent) {

@@ -997,6 +997,24 @@ button {
     margin-bottom: var(--space-2xl);
 }
 
+.about-header {
+    margin-bottom: var(--space-2xl);
+}
+
+.about-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: var(--space-lg);
+    font-weight: 700;
+}
+
+.about-subtitle {
+    font-size: 1.1rem;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-xl);
+    font-weight: 400;
+    margin: 0;
+}
+
 .about-content {
     line-height: 1.8;
     font-size: 1.05rem;
