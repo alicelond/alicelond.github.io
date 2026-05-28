@@ -774,6 +774,18 @@ button {
     font-style: italic;
 }
 
+.post-content hr {
+    border: none;
+    border-top: 2px solid var(--color-border);
+    margin: var(--space-2xl) 0;
+}
+
+.post-body hr {
+    border: none;
+    border-top: 2px solid var(--color-border);
+    margin: var(--space-2xl) 0;
+}
+
 .post-content a {
     color: var(--color-link);
     text-decoration: underline;

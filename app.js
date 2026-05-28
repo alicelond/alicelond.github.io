@@ -91,6 +91,9 @@ function markdownToHtml(markdown) {
     html = html.replace(/^## (.*?)$/gm, '<h2>$1</h2>');
     html = html.replace(/^# (.*?)$/gm, '<h1>$1</h1>');
 
+    // Horizontal rules
+    html = html.replace(/^(-{3,}|\*{3,}|_{3,})$/gm, '<hr>');
+
     // Bold
     html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
 
@@ -107,7 +110,7 @@ function markdownToHtml(markdown) {
     html = html
         .split('\n\n')
         .map(para => {
-            if (para.startsWith('<h') || para.startsWith('<ul') || para.startsWith('<ol') || para.startsWith('<pre')) {
+            if (para.startsWith('<h') || para.startsWith('<ul') || para.startsWith('<ol') || para.startsWith('<pre') || para.startsWith('<hr')) {
                 return para;
             }
             return `<p>${para}</p>`;
