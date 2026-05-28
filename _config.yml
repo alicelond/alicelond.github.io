@@ -1,0 +1,7 @@
+# GitHub Pages configuration
+# Do not process posts directory with Jekyll
+include: [".htaccess"]
+exclude: []
+
+# Keep markdown files as static assets
+future: true
