@@ -109,11 +109,27 @@ function markdownToHtml(markdown) {
     // Links
     html = html.replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2">$1</a>');
 
+    // Tables (Markdown table format)
+    html = html.replace(/^\|(.+)\n\|[\s\-:|]+\n((?:\|.+\n?)*)/gm, (match, headerLine, bodyLines) => {
+        // Parse header
+        const headers = headerLine.split('|').map(h => h.trim()).filter(h => h);
+        const headerRow = headers.map(h => `<th>${h}</th>`).join('');
+        
+        // Parse body rows
+        const rows = bodyLines.trim().split('\n').filter(line => line.trim());
+        const bodyRows = rows.map(row => {
+            const cells = row.split('|').map(c => c.trim()).filter(c => c);
+            return cells.map(c => `<td>${c}</td>`).join('');
+        }).map(row => `<tr>${row}</tr>`).join('');
+        
+        return `<table><thead><tr>${headerRow}</tr></thead><tbody>${bodyRows}</tbody></table>`;
+    });
+
     // Line breaks to paragraphs
     html = html
         .split('\n\n')
         .map(para => {
-            if (para.startsWith('<h') || para.startsWith('<ul') || para.startsWith('<ol') || para.startsWith('<pre') || para.startsWith('<hr') || para.startsWith('<blockquote')) {
+            if (para.startsWith('<h') || para.startsWith('<ul') || para.startsWith('<ol') || para.startsWith('<pre') || para.startsWith('<hr') || para.startsWith('<blockquote') || para.startsWith('<table')) {
                 return para;
             }
             return `<p>${para}</p>`;
